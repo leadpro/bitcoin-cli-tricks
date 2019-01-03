@@ -1,0 +1,9 @@
+#!/bin/bash
+cd /../home/username/dogecoin/bin/
+COUNTER=0
+while [ $COUNTER -lt 100 ]; do
+ADDRESS=$(./dogecoin-cli getnewaddress)
+PRIVKEY=$(./dogecoin-cli dumpprivkey $ADDRESS)
+echo -e "Address: $ADDRESS \nPrivateKey: $PRIVKEY\n" >> paperwallets.txt
+((COUNTER++))
+done
